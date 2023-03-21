@@ -15,9 +15,8 @@ int main(void)
         {
         k += j;
 	if ( k % 2 == 0)
+	sum += k;
         j = k - j;
-        printf(", %ld", k);
-        }
         ++i;
         }
         printf("%ld\n", sum);
