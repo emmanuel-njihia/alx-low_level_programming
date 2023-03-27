@@ -9,7 +9,7 @@
 int main(void)
 
 {
-	int array[5];
+	int array[5] = { -198, 298, 402, -1024, 98 }
 
 	array[0] = 98;
 
