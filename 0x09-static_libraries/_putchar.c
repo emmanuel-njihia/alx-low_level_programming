@@ -4,8 +4,9 @@
 #include <ctype.h>
 #include <string.h>
 
-int _strlen(char *s)
+int _putchar(char c)
 
 {
-	return strlen(s);
+	return putchar(c);
 }
+
