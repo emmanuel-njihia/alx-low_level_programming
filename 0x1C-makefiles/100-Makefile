@@ -1,0 +1,35 @@
+# Makefile variables
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Default rule
+all: $(NAME)
+
+# Rule to build the executable
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME) $(CFLAGS)
+
+# Rule to compile source files
+%.o: %.c
+	$(CC) -c $< -o $@ $(CFLAGS)
+
+# Clean rule
+clean:
+	$(RM) *~ $(NAME)
+
+# Object clean rule
+oclean:
+	$(RM) $(OBJ)
+
+# Full clean rule
+fclean: clean oclean
+
+# Force recompilation rule
+re: fclean all
+
+# Include m.h rule
+-include m.h
